@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инновационный колледж IT и бизнеса</title>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+<!-- ===== Верхняя полоса ===== -->
+<div class="topbar">
+  <div class="container">
+    <span>★ Образование для нового поколения</span>
+    <div>
+      <a href="#">Контакты</a>
+      <a href="#">Приёмная комиссия</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Шапка ===== -->
+<header>
+  <div class="container">
+    <a href="#home" class="logo">
+      <img src="{% static 'images/logo.png' %}" alt="Инновационный колледж IT и бизнеса">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Главная</a></li>
+        <li><a href="#directions">Направления</a></li>
+        <li><a href="#about">О колледже</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#steps">Поступление</a></li>
+      </ul>
+    </nav>
+    <a href="#cta" class="btn btn-primary">Подать заявку →</a>
+  </div>
+</header>
+
+<!-- ===== Главный экран ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Инновационный колледж IT и бизнеса</span>
+
+      <h1>Создавай <span>будущее</span> уже сегодня.</h1>
+
+      <p>Описание колледжа — вставьте текст со страницы itcollege.kg.</p>
+      <div class="hero-buttons">
+        <a href="#directions" class="btn btn-primary">Выбрать направление →</a>
+        <a href="#about" class="btn btn-outline">Узнать о колледже →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <pre><span class="kw">import</span> React <span class="kw">from</span> <span class="str">'react'</span>;
+<span class="kw">function</span> MyProject() {
+  <span class="kw">const</span> goal = <span class="str">'create'</span>;
+  <span class="kw">return</span> &lt;Success /&gt;;
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Полоса направлений ===== -->
+<div class="strip">
+  <div class="container">
+    <div class="strip-item">
+      <div class="strip-icon">💻</div>
+      <div><h4>Технологии</h4><p>Подпись: что изучают</p></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon">💼</div>
+      <div><h4>Бизнес</h4><p>Подпись: что изучают</p></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon">🎯</div>
+      <div><h4>Практика</h4><p>Подпись: как учатся</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Направления ===== -->
+<section id="directions">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Найди своё направление</span>
+        <h2 class="section-title">Чему ты можешь научиться у нас</h2>
+      </div>
+      <p>От первой строки кода до управления командой — выбери то, что тебе интересно, и развивай реальные навыки.</p>
+    </div>
+
+    <div class="cards">
+      {% for ori in orients %}
+      <div class="card">
+        <img src="{{ori.img.url}}" alt=""> 
+        <div class="card-body">
+          <small>{{ori.category.title}}</small>
+          <h3>{{ori.title}}</h3>
+          <p>{{ori.desc}}</p>
+          <div class="tags">
+            {% for tag in ori.tags.all %}
+            <span class="tag">{{tag.title}}</span> 
+            {% endfor %}
+          </div>
+          <a href="#" class="card-link">Подробнее о программе →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    
+  </div>
+</section>
+
+<!-- ===== Тёмный блок ===== -->
+<section class="dark" id="about">
+  <div class="container">
+    <div>
+      <span class="eyebrow" style="color:#f5b82e">Больше, чем просто занятия</span>
+      <h2 class="section-title">Учись делать.<br>Не просто запоминать.</h2>
+      <p class="lead">Мы предлагаем обучение, в котором знания превращаются в собственные продукты, презентации и командные решения.</p>
+      <ul class="feature-list">
+        <li>
+          <div class="ic">🛠️</div>
+          <div><strong>Практические задания</strong><span>Сайты, API, мобильные приложения и бизнес-кейсы.</span></div>
+        </li>
+        <li>
+          <div class="ic">👥</div>
+          <div><strong>Работа в команде</strong><span>Планирование, коммуникация и совместные проекты.</span></div>
+        </li>
+        <li>
+          <div class="ic">🏆</div>
+          <div><strong>Проектное портфолио</strong><span>Результаты обучения, которые можно показать.</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mock">
+      <h5>Мои проекты и достижения</h5>
+      <div class="mock-stats">
+        <div class="mock-stat"><b>08</b><span>Проектов</span></div>
+        <div class="mock-stat"><b>24</b><span>Задач</span></div>
+        <div class="mock-stat"><b>100%</b><span>Прогресс</span></div>
+      </div>
+      <div class="bars">
+        <div style="height:40%"></div>
+        <div style="height:65%"></div>
+        <div style="height:50%"></div>
+        <div style="height:85%"></div>
+        <div style="height:70%"></div>
+        <div style="height:95%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Проекты ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">От идеи до продукта</span>
+        <h2 class="section-title">Проекты, которые<br>можно создать</h2>
+      </div>
+      <p>Каждое напровление ведёт к собственному результату -- от цифрового продукта до бизнес - плана.</p>
+    </div>
+
+    <div class="projects">
+
+      <div class="project">
+        <div class="project-img" style="background:#dcecf8">🌍</div>
+        <div class="project-body">
+          <small>Web · Frontend · Backend</small>
+          <h3>Сайт или веб-сервис</h3>
+          <p>Полноценный продукт с интерфейсом, сервером и базой данных.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-img" style="background:#eceafa">📲</div>
+        <div class="project-body">
+          <small>Mobile · Dart · Flutter</small>
+          <h3>Мобильное приложение</h3>
+          <p>Приложение с понятным дизайном и полезными функциями.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-img" style="background:#fdf3d8">📈</div>
+        <div class="project-body">
+          <small>Business · Management</small>
+          <h3>Свой бизнес-проект</h3>
+          <p>Исследование рынка, финансовая модель и стратегия запуска.</p>
+        </div>
+      </div>
+    </div>
+    <p class="note">* Изображения проектов — примеры для макета сайта.</p>
+  </div>
+</section>
+
+<!-- ===== Навыки ===== -->
+<section class="skills">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Прокачивай не только hard skills</span>
+      <h2 class="section-title">Уверенность в коде.<br>Сила в управлении.</h2>
+      <p style="color:var(--muted);margin:18px 0 26px;">Современные специалисты понимают технологии,
+         умеют работать с людьми и знают, как довести идею до результата.</p>
+      <div class="tags">
+        <span class="tag">Критическое мышление</span>
+        <span class="tag">Лидерство</span>
+        <span class="tag">Предпринимательство</span>
+        <span class="tag">Управление проектами</span>
+        <span class="tag">Презентация идей</span>
+      </div>
+    </div>
+    <div class="mock" style="text-align:center;font-size:56px;">🚀</div>
+  </div>
+</section>
+
+<!-- ===== Шаги ===== -->
+<section id="steps">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Твой следующий шаг</span>
+        <h2 class="section-title">Начать проще,<br>чем кажется</h2>
+      </div>
+      <p>Выбирай интересное направление и сделай первый шаг к будущей профессиию</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Выбери направление</h3>
+        <p>Реши, что тебе ближе: веб, мобильная разработка или бизнес и управление.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Свяжись с колледжем</h3>
+        <p>Уточни условия поступления и задай вопросы приёмной комиссии..</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Начни создавать</h3>
+        <p>Учись, пробуй новые инструменты и собирай первые проекты.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Призыв ===== -->
+<section class="cta" id="cta">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h2>Твоё будущее начинается<br>с одного решения.</h2>
+        <p>Короткая фраза-призыв к заявке.</p>
+      </div>
+      <a href="#" class="btn btn-yellow" onclick="alert('Здесь будет форма или ссылка на заявку'); return false;">Хочу поступить →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Подвал ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="margin-bottom:14px;">
+          <img src="logo it.png" alt="Инновационный колледж IT и бизнеса"
+               style="height:56px; width:auto; background:#fff; padding:10px 14px; border-radius:10px;">
+        </div>
+<!-- ВСТАВЬТЕ СЮДА короткое описание колледжа -->
+        <p style="font-size:14px;">Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#directions">Направления</a></li>
+          <li><a href="#about">О колледже</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Программы</h4>
+        <ul>
+          <li>Frontend и React</li>
+          <li>Backend и Django</li>
+          <li>Flutter</li>
+          <li>Бизнес и менеджмент</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>г.Манас ул.Жусупа Бакиева 7 </li>
+          <li>Телефон: +996 709-66-02-05</li>
+          <li>Сайт: <a href="https://www.itcollege.kg/">itcollege.kg</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Инновационный колледж IT и бизнеса. Все права защищены.</span>
+      <span>Политика конфиденциальности</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
