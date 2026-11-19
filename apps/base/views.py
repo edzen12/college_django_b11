@@ -5,7 +5,7 @@ from apps.orientation.models import Orient
 def homepage(request):
     orients = Orient.objects.select_related(
         'category'
-    ).prefetch_related('tags')
+    ).prefetch_related('tags')[:4]
     context = {
         'orients':orients,
     }

@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Инновационный колледж IT и бизнеса</title>
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
-<!-- ===== Верхняя полоса ===== -->
-<div class="topbar">
-  <div class="container">
-    <span>★ Образование для нового поколения</span>
-    <div>
-      <a href="#">Контакты</a>
-      <a href="#">Приёмная комиссия</a>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Шапка ===== -->
-<header>
-  <div class="container">
-    <a href="#home" class="logo">
-      <img src="{% static 'images/logo.png' %}" alt="Инновационный колледж IT и бизнеса">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#home" class="active">Главная</a></li>
-        <li><a href="#directions">Направления</a></li>
-        <li><a href="#about">О колледже</a></li>
-        <li><a href="#projects">Проекты</a></li>
-        <li><a href="#steps">Поступление</a></li>
-      </ul>
-    </nav>
-    <a href="#cta" class="btn btn-primary">Подать заявку →</a>
-  </div>
-</header>
 
 <!-- ===== Главный экран ===== -->
 <section class="hero" id="home">
@@ -107,7 +70,9 @@
             <span class="tag">{{tag.title}}</span> 
             {% endfor %}
           </div>
-          <a href="#" class="card-link">Подробнее о программе →</a>
+          <a href="{% url 'orient_detail' ori.slug %}" class="card-link">
+            Подробнее о программе
+          </a>
         </div>
       </div>
       {% endfor %}
@@ -262,52 +227,6 @@
       <a href="#" class="btn btn-yellow" onclick="alert('Здесь будет форма или ссылка на заявку'); return false;">Хочу поступить →</a>
     </div>
   </div>
-</section>
+</section> 
 
-<!-- ===== Подвал ===== -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div style="margin-bottom:14px;">
-          <img src="logo it.png" alt="Инновационный колледж IT и бизнеса"
-               style="height:56px; width:auto; background:#fff; padding:10px 14px; border-radius:10px;">
-        </div>
-<!-- ВСТАВЬТЕ СЮДА короткое описание колледжа -->
-        <p style="font-size:14px;">Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
-      </div>
-      <div>
-        <h4>Навигация</h4>
-        <ul>
-          <li><a href="#home">Главная</a></li>
-          <li><a href="#directions">Направления</a></li>
-          <li><a href="#about">О колледже</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Программы</h4>
-        <ul>
-          <li>Frontend и React</li>
-          <li>Backend и Django</li>
-          <li>Flutter</li>
-          <li>Бизнес и менеджмент</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Контакты</h4>
-        <ul>
-          <li>г.Манас ул.Жусупа Бакиева 7 </li>
-          <li>Телефон: +996 709-66-02-05</li>
-          <li>Сайт: <a href="https://www.itcollege.kg/">itcollege.kg</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Инновационный колледж IT и бизнеса. Все права защищены.</span>
-      <span>Политика конфиденциальности</span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+{% endblock content %}

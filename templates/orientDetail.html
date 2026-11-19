@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <img src="{{orient.img.url}}"  width="550px">
+    <h2>{{orient.title}}</h2>
+    <a href="#" style="color: blue;">{{orient.category.title}}</a>
+    {% for tag in orient.tags.all %}
+    <a href="#" style="color: blue;">{{tag.title}}</a> 
+    {% endfor %}
+    <p>{{orient.desc}}</p>
+</div>
+
+{% endblock content %}
