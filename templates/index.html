@@ -136,33 +136,19 @@
     </div>
 
     <div class="projects">
-
-      <div class="project">
-        <div class="project-img" style="background:#dcecf8">🌍</div>
+      {% for project in projects %}
+      <div class="project"> 
+        <img src="{{project.img.url}}" alt=""> 
         <div class="project-body">
-          <small>Web · Frontend · Backend</small>
-          <h3>Сайт или веб-сервис</h3>
-          <p>Полноценный продукт с интерфейсом, сервером и базой данных.</p>
+          <small>
+            {% for tag in project.tags.all %} {{tag.title}} {% endfor %}
+          </small>
+          <h3>{{project.title}}</h3>
+          <p>{{project.desc}}</p>
         </div>
       </div>
-      <div class="project">
-        <div class="project-img" style="background:#eceafa">📲</div>
-        <div class="project-body">
-          <small>Mobile · Dart · Flutter</small>
-          <h3>Мобильное приложение</h3>
-          <p>Приложение с понятным дизайном и полезными функциями.</p>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-img" style="background:#fdf3d8">📈</div>
-        <div class="project-body">
-          <small>Business · Management</small>
-          <h3>Свой бизнес-проект</h3>
-          <p>Исследование рынка, финансовая модель и стратегия запуска.</p>
-        </div>
-      </div>
-    </div>
-    <p class="note">* Изображения проектов — примеры для макета сайта.</p>
+      {% endfor %}
+    </div> 
   </div>
 </section>
 
