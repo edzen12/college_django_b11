@@ -7,4 +7,12 @@ def orient_detail(request, slug):
     context = {
         "orient":orient,
     }
-    return render(request, 'orientDetail.html', context)
+    return render(request, 'pages/orientDetail.html', context)
+
+
+def orient_page(request):
+    orients = Orient.objects.all()
+    context = {
+        "orients":orients,
+    }
+    return render(request, 'pages/orients-page.html', context)

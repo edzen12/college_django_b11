@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container" style='margin-top:50px'>
+  <h1 style='text-align:center;margin-bottom:50px; color:#237AB0'>Все направления</h1>
+  <div class="cards">
+    {% for ori in orients %}
+    <div class="card">
+      <img src="{{ori.img.url}}" alt=""> 
+      <div class="card-body">
+        <small>{{ori.category.title}}</small>
+        <h3>{{ori.title}}</h3>
+        <p>{{ori.desc}}</p>
+        <div class="tags">
+          {% for tag in ori.tags.all %}
+          <span class="tag">{{tag.title}}</span> 
+          {% endfor %}
+        </div>
+        <a href="{% url 'orient_detail' ori.slug %}" class="card-link">
+          Подробнее о программе
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

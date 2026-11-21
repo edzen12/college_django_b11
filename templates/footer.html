@@ -1,19 +1,21 @@
 <!-- ===== Подвал ===== -->
+{% load static %}
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div style="margin-bottom:14px;">
-          <img src="logo it.png" alt="Инновационный колледж IT и бизнеса"
-               style="height:56px; width:auto; background:#fff; padding:10px 14px; border-radius:10px;">
-        </div>
+          <a href="{% url "homepage" %}">
+            <img src="{% static 'images/logo.png' %}" class='logo'>
+          </a>
+         </div>
         <p style="font-size:14px;">Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
       </div>
       <div>
         <h4>Навигация</h4>
         <ul>
-          <li><a href="#home">Главная</a></li>
-          <li><a href="#directions">Направления</a></li>
+          <li><a href="{% url "homepage" %}">Главная</a></li>
+          <li><a href="{% url "orient_page" %}">Направления</a></li>
           <li><a href="#about">О колледже</a></li>
         </ul>
       </div>
